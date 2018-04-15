@@ -1,6 +1,7 @@
 var compassHeading = 0;
 var capture;
 var east_txt = "east"
+var south_text = "south"
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight, P2D);
@@ -22,8 +23,11 @@ function draw() {
   
 
   if(compassHeading > 45 && compassHeading < 135) {
-  		text(east_txt,0,0)
-  } else {
+  		text(east_txt,0,0);
+  } if else (compassHeading > 135 && compassHeading < 225) {
+  		text(south_text,0,0);
+
+  }else {
   		text(compassHeading,0,0)
   }
 
