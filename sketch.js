@@ -5,10 +5,12 @@ var south_text = "south";
 var west_text = "west";
 var north_text = "north";
 var gif_south;
+var gif_east;
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight, P2D);
 	gif_south = loadGif('waves.gif');
+	gif_east = loadGif('sun.gif');
 }
 
 function draw() {
@@ -25,7 +27,8 @@ function draw() {
 	translate(width/2, height/2);
 	
 	if(compassHeading > 45 && compassHeading < 135) {
-		text(east_txt,0,0);
+		//text(east_txt,0,0);
+		image(gif_east, 0, 0);
 	} else if (compassHeading >= 135 && compassHeading < 225) {
 		//text(south_text,0,0);
 		image(gif_south, 0, 0);
