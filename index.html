@@ -8,17 +8,21 @@
     <script src="../addons/p5.dom.min.js"></script>
     <script src="../addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
-    <video id="player" ></video>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
     <script>
-      var canvas = document.getElementById('player');
+      // Grab elements, create settings, etc.
+      var video = document.getElementById('video');
       
-      var handleSuccess = function(stream) {
-        player.srcObject = stream;
-      };
-      
-      navigator.mediaDevices.getUserMedia({ audio: true, video: true })
-        .then(handleSuccess)
-      canvas.drawImage(player, 0, 0);
+      // Get access to the camera!
+      if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Not adding `{ audio: true }` since we only want video now
+        navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+          video.src = window.URL.createObjectURL(stream);
+          video.play();
+        });
+      }
     </script>
   </head>
   <body>
