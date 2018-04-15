@@ -24,10 +24,10 @@ function draw() {
 
   if(compassHeading > 45 && compassHeading < 135) {
   		text(east_txt,0,0);
-  }if (compassHeading >= 135 && compassHeading < 225) {
+  } else if (compassHeading >= 135 && compassHeading < 225) {
   		text(south_text,0,0);
 
-  }else {
+  } else {
   		text(compassHeading,0,0)
   }
 
