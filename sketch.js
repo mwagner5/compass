@@ -29,7 +29,7 @@ function draw() {
   } else {
   		rotateX(radians(rotationX));
   		rotateY(radians(rotationY));
-  		text(rotationX,0,0);
+  		text("I am an android!",0,0);
 
   }
 
