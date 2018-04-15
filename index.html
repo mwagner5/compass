@@ -12,6 +12,10 @@
     <script>
       var canvas = document.getElementById('player');
       
+      var handleSuccess = function(stream) {
+        player.srcObject = stream;
+      };
+      
       navigator.mediaDevices.getUserMedia({ audio: true, video: true })
         .then(handleSuccess)
       canvas.drawImage(myVideoElement, 0, 0);
