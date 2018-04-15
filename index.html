@@ -2,30 +2,13 @@
 <html>
   <head>
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <video autoplay></video>
-    <script>
-      function hasGetUserMedia() {
-        return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
-      }
-      if (hasGetUserMedia()) {
-        // Good to go
-      } else {
-        alert('getUserMedia() is not supported by your browser');
-      }
-      const constraints = {
-        video: true
-      };
-      const video = document.querySelector('video');
-      function handleSuccess(stream) {
-        video.srcObject = stream;
-      }
-
-      function handleError(error) {
-        console.error('Reeeejected!', error);
-      }
-      navigator.mediaDevices.getUserMedia(constraints).
-      then(handleSuccess).catch(handleError);
-    </script>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"></script>
+    <body style='margin : 0px; overflow: hidden;'>
+      <a-scene embedded arjs='sourceType: webcam;'>
+        <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+        <a-marker-camera preset='hiro'></a-marker-camera>
+      </a-scene>
     <style> body {padding: 0; margin: 0;} </style>
     <script src="../p5.min.js"></script>
     <script src="../addons/p5.dom.min.js"></script>
