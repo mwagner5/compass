@@ -9,12 +9,8 @@
     <script src="sketch.js"></script>
     <video id="player" controls></video>
     <script>
+      var canvas = document.getElementById('player');
       var context = canvas.getContext('2d');
-      var player = document.getElementById('player');
-      
-      var handleSuccess = function(stream) {
-        player.srcObject = stream;
-      };
       
       navigator.mediaDevices.getUserMedia({ audio: true, video: true })
         .then(handleSuccess)
