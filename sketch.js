@@ -21,7 +21,7 @@ function draw() {
   textAlign(CENTER);
   // translate moves the grid so that the (0,0) point is at the center of the canvas rather than in the top left
   translate(width/2, height/2);
-  text("direction", 0, 0);
+  //text("direction", 0, 0);
 
   if(compassHeading > 45 && compassHeading < 135) {
 	  text(east_txt,0,0);
