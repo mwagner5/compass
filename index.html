@@ -4,6 +4,14 @@
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
     <video autoplay></video>
     <script>
+      function hasGetUserMedia() {
+        return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+      }
+      if (hasGetUserMedia()) {
+        // Good to go
+      } else {
+        alert('getUserMedia() is not supported by your browser');
+      }
       const constraints = {
         video: true
       };
