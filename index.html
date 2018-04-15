@@ -17,6 +17,7 @@
       
       navigator.mediaDevices.getUserMedia({ audio: true, video: true })
         .then(handleSuccess)
+      context.drawImage(myVideoElement, 0, 0);
     </script>
   </head>
   <body>
