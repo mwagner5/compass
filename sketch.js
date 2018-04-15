@@ -14,8 +14,6 @@ function draw() {
   background(255);
 
 //set some properties
-  //rotateX(radians(rotationX));
-  //rotateY(radians(rotationY));
   fill(50);
   textSize(100);
   textAlign(CENTER);
@@ -34,9 +32,6 @@ function draw() {
   } else {
 	  text("Rose",0,0);
   }
-// 	rotateX(radians(rotationX));
-// 	rotateY(radians(rotationY));
-// 	text("I am an android!",0,0);
 
 }
 
