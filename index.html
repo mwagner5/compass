@@ -11,11 +11,10 @@
     <video id="player" ></video>
     <script>
       var canvas = document.getElementById('player');
-      var context = canvas.getContext('2d');
       
       navigator.mediaDevices.getUserMedia({ audio: true, video: true })
         .then(handleSuccess)
-      context.drawImage(myVideoElement, 0, 0);
+      canvas.drawImage(myVideoElement, 0, 0);
     </script>
   </head>
   <body>
