@@ -28,10 +28,10 @@ function draw() {
 	
 	if(compassHeading > 45 && compassHeading < 135) {
 		//text(east_txt,0,0);
-		image(gif_east, 0, 0);
+		image(gif_east, 0, 0,width, width);
 	} else if (compassHeading >= 135 && compassHeading < 225) {
 		//text(south_text,0,0);
-		image(gif_south, 0, 0);
+		image(gif_south, 0, 0,width, width);
 	} else if (compassHeading >= 225 && compassHeading < 315) {
 		text(west_text,0,0);
 	} else if (compassHeading >= 315 && compassHeading < 359 || compassHeading >= 0 && compassHeading <=45) {
