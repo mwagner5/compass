@@ -7,32 +7,17 @@
     <script src="../addons/p5.dom.min.js"></script>
     <script src="../addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
+    <video id="player" controls></video>
     <script>
-  function hasGetUserMedia() {
-    return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
-  }
-  if (hasGetUserMedia()) {
-    // Good to go
-  } else {
-    alert('getUserMedia() is not supported by your browser');
-  }
-</script>
-<video autoplay></video>
-<script>
-  const constraints = {
-    video: true
-  };
-  const video = document.querySelector('video');
-  function handleSuccess(stream) {
-    video.srcObject = stream;
-  }
-  function handleError(error) {
-    console.error('Reeeejected!', error);
-  }
-  navigator.mediaDevices.getUserMedia(constraints).
-  then(handleSuccess).catch(handleError);
-</script>
-    <input type="file" name="video" accept="video/*" capture="environment">
+      var player = document.getElementById('player');
+      
+      var handleSuccess = function(stream) {
+        player.srcObject = stream;
+      };
+      
+      navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+        .then(handleSuccess)
+    </script>
   </head>
   <body>
   </body>
