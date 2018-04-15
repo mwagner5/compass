@@ -5,7 +5,6 @@ var south_text = "south"
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight, P2D);
-	capture = createCapture(VIDEO);
 }
 
 function draw() {
@@ -24,11 +23,14 @@ function draw() {
 
   if(compassHeading > 45 && compassHeading < 135) {
   		text(east_txt,0,0);
-  } else if (compassHeading >= 135 && compassHeading < 225) {
+  } if else (compassHeading >= 135 && compassHeading < 225) {
   		text(south_text,0,0);
 
   } else {
-  		text(compassHeading,0,0)
+  		rotateX(radians(rotationX));
+  		rotateY(radians(rotationY));
+  		text(rotationX,0,0);
+
   }
 
   image(capture, 0, 0, width, width * capture.height / capture.width);
