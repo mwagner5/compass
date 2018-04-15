@@ -6,11 +6,14 @@ var west_text = "west";
 var north_text = "north";
 var gif_south;
 var gif_east;
+var gif_west;
+var gif_north;
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight, P2D);
 	gif_south = loadGif('waves.gif');
 	gif_east = loadGif('sun.gif');
+	gif_west = loadGif('mt.gif');
 }
 
 function draw() {
@@ -33,9 +36,11 @@ function draw() {
 		//text(south_text,0,0);
 		image(gif_south, 0, 0,width, width);
 	} else if (compassHeading >= 225 && compassHeading < 315) {
-		text(west_text,0,0);
+		//text(west_text,0,0);
+		image(gif_west, 0, 0,width, width);
 	} else if (compassHeading >= 315 && compassHeading < 359 || compassHeading >= 0 && compassHeading <=45) {
-		text(north_text,0,0);
+		//text(north_text,0,0);
+		image(gif_west, 0, 0,width, width);
 	} else {
 		text("Rose",0,0);
 	}
